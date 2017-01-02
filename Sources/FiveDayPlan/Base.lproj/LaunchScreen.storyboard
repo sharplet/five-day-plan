@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="IDz-LO-ons">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--5 Day Plan-->
+        <scene sceneID="Vua-SP-0bH">
+            <objects>
+                <tableViewController id="CQz-CG-LcH" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="Mns-f6-Ueg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <connections>
+                            <outlet property="dataSource" destination="CQz-CG-LcH" id="UQG-w4-pM0"/>
+                            <outlet property="delegate" destination="CQz-CG-LcH" id="wZn-kA-Qt2"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="5 Day Plan" id="jew-Pb-uIu"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DQH-7v-EvF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="73" y="405"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="p3Y-Kj-UGk">
+            <objects>
+                <navigationController id="IDz-LO-ons" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="LqJ-qj-vSo">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="CQz-CG-LcH" kind="relationship" relationship="rootViewController" id="PCf-1Z-JCI"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0Zo-H1-1Dx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-879" y="405"/>
+        </scene>
+    </scenes>
+</document>

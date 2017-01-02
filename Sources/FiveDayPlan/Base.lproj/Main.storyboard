@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="b89-ER-Ois">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--5 Day Plan-->
+        <scene sceneID="5pE-8U-Xly">
+            <objects>
+                <tableViewController id="02B-3g-IZ4" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="etJ-J9-xdf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <connections>
+                            <outlet property="dataSource" destination="02B-3g-IZ4" id="tV2-dh-DPg"/>
+                            <outlet property="delegate" destination="02B-3g-IZ4" id="htv-pM-YTW"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="5 Day Plan" id="Aby-rV-YQX"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5bD-Uf-HTQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="601" y="160"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="H1v-pZ-aHU">
+            <objects>
+                <navigationController id="b89-ER-Ois" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="GIa-4P-XM0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="02B-3g-IZ4" kind="relationship" relationship="rootViewController" id="bdG-hd-tdg"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7yn-14-5xI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-351" y="160"/>
+        </scene>
+    </scenes>
+</document>
