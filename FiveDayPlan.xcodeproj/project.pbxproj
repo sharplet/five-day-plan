@@ -7,10 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4A02332E1E1ABE0C00087E4C /* FiveDayPlanTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A02332D1E1ABE0C00087E4C /* FiveDayPlanTests.swift */; };
 		4A0233351E1AC1ED00087E4C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A0233331E1AC1ED00087E4C /* LaunchScreen.storyboard */; };
 		4A0233361E1AC1ED00087E4C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A0233341E1AC1ED00087E4C /* Main.storyboard */; };
 		4A0233391E1AC22000087E4C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0233381E1AC22000087E4C /* AppDelegate.swift */; };
+		4A0233401E1AC51400087E4C /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A02333E1E1AC51400087E4C /* Nimble.framework */; };
+		4A0233411E1AC51400087E4C /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A02333F1E1AC51400087E4C /* Quick.framework */; };
+		4A0233431E1AC52D00087E4C /* Nimble.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 4A02333E1E1AC51400087E4C /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4A0233441E1AC52D00087E4C /* Quick.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 4A02333F1E1AC51400087E4C /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4A0233461E1AC56100087E4C /* FiveDayPlanSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0233451E1AC56100087E4C /* FiveDayPlanSpec.swift */; };
 		4A49B8AA1E1AB4160042A82A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A49B8A91E1AB4160042A82A /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -24,11 +28,28 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		4A0233421E1AC51E00087E4C /* Copy Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				4A0233431E1AC52D00087E4C /* Nimble.framework in Copy Frameworks */,
+				4A0233441E1AC52D00087E4C /* Quick.framework in Copy Frameworks */,
+			);
+			name = "Copy Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		4A02332D1E1ABE0C00087E4C /* FiveDayPlanTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FiveDayPlanTests.swift; sourceTree = "<group>"; };
 		4A0233331E1AC1ED00087E4C /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4A0233341E1AC1ED00087E4C /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		4A0233381E1AC22000087E4C /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4A02333E1E1AC51400087E4C /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
+		4A02333F1E1AC51400087E4C /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
+		4A0233451E1AC56100087E4C /* FiveDayPlanSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FiveDayPlanSpec.swift; sourceTree = "<group>"; };
 		4A49B89F1E1AB4160042A82A /* FiveDayPlan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FiveDayPlan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A49B8A91E1AB4160042A82A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4A49B8AE1E1AB4160042A82A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -48,6 +69,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A0233401E1AC51400087E4C /* Nimble.framework in Frameworks */,
+				4A0233411E1AC51400087E4C /* Quick.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,11 +94,21 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		4A02333D1E1AC4F500087E4C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4A02333E1E1AC51400087E4C /* Nimble.framework */,
+				4A02333F1E1AC51400087E4C /* Quick.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		4A49B8961E1AB4160042A82A = {
 			isa = PBXGroup;
 			children = (
 				4A49B8C21E1ABC950042A82A /* Sources */,
 				4A49B8C31E1ABCB70042A82A /* Tests */,
+				4A02333D1E1AC4F500087E4C /* Frameworks */,
 				4A49B8A01E1AB4160042A82A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -103,7 +136,7 @@
 		4A49B8B61E1AB4160042A82A /* FiveDayPlanTests */ = {
 			isa = PBXGroup;
 			children = (
-				4A02332D1E1ABE0C00087E4C /* FiveDayPlanTests.swift */,
+				4A0233451E1AC56100087E4C /* FiveDayPlanSpec.swift */,
 				4A49B8B91E1AB4160042A82A /* Info.plist */,
 			);
 			path = FiveDayPlanTests;
@@ -152,6 +185,7 @@
 				4A49B8AF1E1AB4160042A82A /* Sources */,
 				4A49B8B01E1AB4160042A82A /* Frameworks */,
 				4A49B8B11E1AB4160042A82A /* Resources */,
+				4A0233421E1AC51E00087E4C /* Copy Frameworks */,
 			);
 			buildRules = (
 			);
@@ -240,7 +274,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4A02332E1E1ABE0C00087E4C /* FiveDayPlanTests.swift in Sources */,
+				4A0233461E1AC56100087E4C /* FiveDayPlanSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,6 +315,8 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				"FRAMEWORK_SEARCH_PATHS[sdk=iphoneos*]" = "$(PROJECT_DIR)/Carthage/Build/iOS";
+				"FRAMEWORK_SEARCH_PATHS[sdk=iphonesimulator*]" = "$(PROJECT_DIR)/Carthage/Build/iOS";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -330,6 +366,8 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				"FRAMEWORK_SEARCH_PATHS[sdk=iphoneos*]" = "$(PROJECT_DIR)/Carthage/Build/iOS";
+				"FRAMEWORK_SEARCH_PATHS[sdk=iphonesimulator*]" = "$(PROJECT_DIR)/Carthage/Build/iOS";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
