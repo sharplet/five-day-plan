@@ -27,6 +27,11 @@ final class PlanTemplateSpec: QuickSpec {
         let titles = { try testTemplate().weeks.map { $0.title } }
         expect { try titles() } == ["Test Week 1", "Test Week 2", "Test Week 3"]
       }
+
+      it("parses each line as a scripture collection for that day") {
+        let chapters = { try testTemplate().weeks.first?.days.first?.chapters }
+        expect { try chapters()?.at(0)?.description } == "Genesis 1"
+      }
     }
 
     describe("2017") {
