@@ -15,6 +15,7 @@
 		4A0233431E1AC52D00087E4C /* Nimble.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 4A02333E1E1AC51400087E4C /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4A0233441E1AC52D00087E4C /* Quick.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 4A02333F1E1AC51400087E4C /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4A0233461E1AC56100087E4C /* FiveDayPlanSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0233451E1AC56100087E4C /* FiveDayPlanSpec.swift */; };
+		4A0233311E1AC0B000087E4C /* Plans in Resources */ = {isa = PBXBuildFile; fileRef = 4A0233301E1AC0B000087E4C /* Plans */; };
 		4A49B8AA1E1AB4160042A82A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A49B8A91E1AB4160042A82A /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +51,7 @@
 		4A02333E1E1AC51400087E4C /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
 		4A02333F1E1AC51400087E4C /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
 		4A0233451E1AC56100087E4C /* FiveDayPlanSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FiveDayPlanSpec.swift; sourceTree = "<group>"; };
+		4A0233301E1AC0B000087E4C /* Plans */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Plans; sourceTree = "<group>"; };
 		4A49B89F1E1AB4160042A82A /* FiveDayPlan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FiveDayPlan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A49B8A91E1AB4160042A82A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4A49B8AE1E1AB4160042A82A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 				4A0233371E1AC20B00087E4C /* Controllers */,
 				4A0233321E1AC1A800087E4C /* Storyboards */,
 				4A49B8A91E1AB4160042A82A /* Assets.xcassets */,
+				4A0233301E1AC0B000087E4C /* Plans */,
 				4A49B8AE1E1AB4160042A82A /* Info.plist */,
 			);
 			path = FiveDayPlan;
@@ -249,6 +252,7 @@
 				4A0233351E1AC1ED00087E4C /* LaunchScreen.storyboard in Resources */,
 				4A49B8AA1E1AB4160042A82A /* Assets.xcassets in Resources */,
 				4A0233361E1AC1ED00087E4C /* Main.storyboard in Resources */,
+				4A0233311E1AC0B000087E4C /* Plans in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
