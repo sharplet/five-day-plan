@@ -17,6 +17,18 @@ final class PlanTemplateSpec: QuickSpec {
       }
     }
 
+    describe("parsing") {
+      it("extracts the first line as the week title") {
+        let title = { try testTemplate().weeks.first?.title }
+        expect { try title() } == "Test Week 1"
+      }
+
+      it("extracts multiple weeks separated by empty lines") {
+        let titles = { try testTemplate().weeks.map { $0.title } }
+        expect { try titles() } == ["Test Week 1", "Test Week 2", "Test Week 3"]
+      }
+    }
+
     describe("2017") {
       it("exists") {
         expect(PlanTemplate.year2017).toNot(beNil())
