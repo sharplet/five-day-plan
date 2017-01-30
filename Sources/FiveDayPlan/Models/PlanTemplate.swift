@@ -69,14 +69,14 @@ private extension ScriptureCollection {
 
     guard !scanner.isAtEnd else {
       let chapter = Scripture.Chapter(book: book)
-      chapters.append(chapter)
+      self.chapters.append(chapter)
       return
     }
 
     scanner.scanCharacters(from: .whitespaces, into: nil)
 
-    let chapter = try scanChapter(in: book, with: scanner)
-    chapters.append(chapter)
+    let chapters = try scanChapters(in: book, with: scanner)
+    self.chapters.append(contentsOf: chapters)
   }
 
   private func scanBook(with scanner: Scanner) throws -> Scripture.Book {
@@ -94,6 +94,43 @@ private extension ScriptureCollection {
       else { throw PlanTemplateError.invalidScripture(scanner.string) }
 
     return book
+  }
+
+  private func scanChapters(in book: Scripture.Book, with scanner: Scanner) throws -> [Scripture.Chapter] {
+    let startingLocation = scanner.scanLocation
+
+    let firstChapter = try scanChapter(in: book, with: scanner)
+
+    defer {
+      if !scanner.isAtEnd {
+        scanner.scanLocation = startingLocation
+      }
+    }
+
+    if scanner.scanString("-", into: nil) {
+      let lastChapter = try scanChapter(in: book, with: scanner)
+      let remaining = (firstChapter.chapter! + 1) ..< lastChapter.chapter!
+      var chapters = remaining.map { Scripture.Chapter(book: book, chapter: $0)! }
+      chapters.insert(firstChapter, at: 0)
+      chapters.append(lastChapter)
+      return chapters
+    } else if scanner.isAtEnd {
+      return [firstChapter]
+    } else {
+      var chapters = [firstChapter]
+
+      while scanner.scanString(",", into: nil) {
+        scanner.scanCharacters(from: .whitespaces, into: nil)
+        let chapter = try scanChapter(in: book, with: scanner)
+        chapters.append(chapter)
+      }
+
+      guard scanner.isAtEnd else {
+        throw PlanTemplateError.invalidScripture(scanner.string)
+      }
+
+      return chapters
+    }
   }
 
   private func scanChapter(in book: Scripture.Book, with scanner: Scanner) throws -> Scripture.Chapter {

@@ -31,6 +31,12 @@ final class PlanTemplateSpec: QuickSpec {
       it("parses each line as a scripture collection for that day") {
         let chapters = { try testTemplate().weeks.first?.days.first?.chapters }
         expect { try chapters()?.at(0)?.description } == "Genesis 1"
+        expect { try chapters()?.at(1)?.description } == "Proverbs 1"
+        expect { try chapters()?.at(2)?.description } == "Proverbs 2"
+        expect { try chapters()?.at(3)?.description } == "Proverbs 3"
+        expect { try chapters()?.at(4)?.description } == "Mark 1"
+        expect { try chapters()?.at(5)?.description } == "Mark 2"
+        expect { try chapters()?.at(6)?.description } == "Titus"
       }
     }
 
