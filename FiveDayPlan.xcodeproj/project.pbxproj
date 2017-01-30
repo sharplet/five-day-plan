@@ -25,6 +25,8 @@
 		4A02335A1E1AF36600087E4C /* ScriptureCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0233591E1AF36600087E4C /* ScriptureCollection.swift */; };
 		4A0233601E1B09F600087E4C /* CollectionExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A02335F1E1B09F600087E4C /* CollectionExtensions.swift */; };
 		4A49B8AA1E1AB4160042A82A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A49B8A91E1AB4160042A82A /* Assets.xcassets */; };
+		4AEBFC371E3EC23F0097540F /* PlanOutlineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AEBFC361E3EC23F0097540F /* PlanOutlineViewController.swift */; };
+		4AEBFC3A1E3EC4E90097540F /* PlanOutlineViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AEBFC391E3EC4E90097540F /* PlanOutlineViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +75,8 @@
 		4A49B8AE1E1AB4160042A82A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4A49B8B31E1AB4160042A82A /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A49B8B91E1AB4160042A82A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4AEBFC361E3EC23F0097540F /* PlanOutlineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanOutlineViewController.swift; sourceTree = "<group>"; };
+		4AEBFC391E3EC4E90097540F /* PlanOutlineViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanOutlineViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,6 +195,8 @@
 				4A0233521E1AE33300087E4C /* Extensions */,
 				4A02334D1E1AC96900087E4C /* Models */,
 				4A0233321E1AC1A800087E4C /* Storyboards */,
+				4AEBFC351E3EC2250097540F /* ViewControllers */,
+				4AEBFC381E3EC4DB0097540F /* ViewModels */,
 				4A49B8A91E1AB4160042A82A /* Assets.xcassets */,
 				4A0233301E1AC0B000087E4C /* Plans */,
 				4A49B8AE1E1AB4160042A82A /* Info.plist */,
@@ -223,6 +229,22 @@
 				4A49B8B61E1AB4160042A82A /* FiveDayPlanTests */,
 			);
 			path = Tests;
+			sourceTree = "<group>";
+		};
+		4AEBFC351E3EC2250097540F /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				4AEBFC361E3EC23F0097540F /* PlanOutlineViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		4AEBFC381E3EC4DB0097540F /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				4AEBFC391E3EC4E90097540F /* PlanOutlineViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -339,7 +361,9 @@
 				4A02335A1E1AF36600087E4C /* ScriptureCollection.swift in Sources */,
 				4A0233541E1AE34400087E4C /* Strings.swift in Sources */,
 				4A0233581E1AEAC500087E4C /* Scripture.swift in Sources */,
+				4AEBFC3A1E3EC4E90097540F /* PlanOutlineViewModel.swift in Sources */,
 				4A0233561E1AE4A100087E4C /* Sequence.swift in Sources */,
+				4AEBFC371E3EC23F0097540F /* PlanOutlineViewController.swift in Sources */,
 				4A0233391E1AC22000087E4C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
