@@ -6,7 +6,10 @@ enum Scripture {
     fileprivate let position: Int
 
     init?(rawValue: String) {
-      guard let position = books.index(of: rawValue) else { return nil }
+      guard let position = books.index(of: rawValue)
+        ?? alternates[rawValue].flatMap(books.index(of:))
+        else { return nil }
+
       self.position = position
       self.rawValue = rawValue
     }
@@ -115,4 +118,8 @@ private let books = [
   "3 John",
   "Jude",
   "Revelation",
+]
+
+private let alternates: [String: String] = [
+  "Psalm": "Psalms",
 ]
