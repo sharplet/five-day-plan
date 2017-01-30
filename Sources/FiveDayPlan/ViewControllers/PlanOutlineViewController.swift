@@ -16,10 +16,18 @@ final class PlanOutlineViewController: UITableViewController {
   }
 
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let row = viewModel[indexPath]
+    let week = viewModel[indexPath]
     let cell = tableView.dequeueReusableCell(withIdentifier: "Day Summary", for: indexPath)
-    cell.textLabel?.text = row.title
-    cell.detailTextLabel?.text = row.subtitle
+    cell.textLabel?.text = week.title
+    cell.detailTextLabel?.text = week.subtitle
     return cell
+  }
+
+  override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    let week = viewModel.sections[indexPath.section]
+    navigationItem.backBarButtonItem = UIBarButtonItem(title: week.title, style: .plain, target: nil, action: nil)
+    perform(.showDayDetail) {
+      $0.details = self.viewModel[indexPath].dayDetails
+    }
   }
 }

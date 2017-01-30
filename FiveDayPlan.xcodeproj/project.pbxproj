@@ -27,6 +27,11 @@
 		4A49B8AA1E1AB4160042A82A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A49B8A91E1AB4160042A82A /* Assets.xcassets */; };
 		4AEBFC371E3EC23F0097540F /* PlanOutlineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AEBFC361E3EC23F0097540F /* PlanOutlineViewController.swift */; };
 		4AEBFC3A1E3EC4E90097540F /* PlanOutlineViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AEBFC391E3EC4E90097540F /* PlanOutlineViewModel.swift */; };
+		4AEBFC3D1E3EEF2E0097540F /* Aspects.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AEBFC3B1E3EEF2E0097540F /* Aspects.framework */; };
+		4AEBFC3E1E3EEF2E0097540F /* Perform.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AEBFC3C1E3EEF2E0097540F /* Perform.framework */; };
+		4AEBFC421E3EEF940097540F /* Segues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AEBFC411E3EEF940097540F /* Segues.swift */; };
+		4AEBFC441E3EEFD70097540F /* PlanDayDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AEBFC431E3EEFD70097540F /* PlanDayDetailViewController.swift */; };
+		4AEBFC461E3EF0550097540F /* PlanDayDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AEBFC451E3EF0550097540F /* PlanDayDetailViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +82,11 @@
 		4A49B8B91E1AB4160042A82A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4AEBFC361E3EC23F0097540F /* PlanOutlineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanOutlineViewController.swift; sourceTree = "<group>"; };
 		4AEBFC391E3EC4E90097540F /* PlanOutlineViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanOutlineViewModel.swift; sourceTree = "<group>"; };
+		4AEBFC3B1E3EEF2E0097540F /* Aspects.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Aspects.framework; path = Carthage/Build/iOS/Aspects.framework; sourceTree = "<group>"; };
+		4AEBFC3C1E3EEF2E0097540F /* Perform.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Perform.framework; path = Carthage/Build/iOS/Perform.framework; sourceTree = "<group>"; };
+		4AEBFC411E3EEF940097540F /* Segues.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Segues.swift; sourceTree = "<group>"; };
+		4AEBFC431E3EEFD70097540F /* PlanDayDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanDayDetailViewController.swift; sourceTree = "<group>"; };
+		4AEBFC451E3EF0550097540F /* PlanDayDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanDayDetailViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +94,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4AEBFC3D1E3EEF2E0097540F /* Aspects.framework in Frameworks */,
+				4AEBFC3E1E3EEF2E0097540F /* Perform.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,6 +116,7 @@
 			children = (
 				4A0233331E1AC1ED00087E4C /* LaunchScreen.storyboard */,
 				4A0233341E1AC1ED00087E4C /* Main.storyboard */,
+				4AEBFC411E3EEF940097540F /* Segues.swift */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -127,6 +140,8 @@
 		4A02333D1E1AC4F500087E4C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4AEBFC3B1E3EEF2E0097540F /* Aspects.framework */,
+				4AEBFC3C1E3EEF2E0097540F /* Perform.framework */,
 				4A02333E1E1AC51400087E4C /* Nimble.framework */,
 				4A02333F1E1AC51400087E4C /* Quick.framework */,
 			);
@@ -234,6 +249,7 @@
 		4AEBFC351E3EC2250097540F /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				4AEBFC431E3EEFD70097540F /* PlanDayDetailViewController.swift */,
 				4AEBFC361E3EC23F0097540F /* PlanOutlineViewController.swift */,
 			);
 			path = ViewControllers;
@@ -242,6 +258,7 @@
 		4AEBFC381E3EC4DB0097540F /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				4AEBFC451E3EF0550097540F /* PlanDayDetailViewModel.swift */,
 				4AEBFC391E3EC4E90097540F /* PlanOutlineViewModel.swift */,
 			);
 			path = ViewModels;
@@ -257,6 +274,7 @@
 				4A49B89B1E1AB4160042A82A /* Sources */,
 				4A49B89C1E1AB4160042A82A /* Frameworks */,
 				4A49B89D1E1AB4160042A82A /* Resources */,
+				4AEBFC401E3EEF4E0097540F /* Copy Carthage Frameworks */,
 			);
 			buildRules = (
 			);
@@ -352,6 +370,26 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4AEBFC401E3EEF4E0097540F /* Copy Carthage Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Aspects.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Perform.framework",
+			);
+			name = "Copy Carthage Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/bin/env carthage copy-frameworks";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		4A49B89B1E1AB4160042A82A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -360,10 +398,13 @@
 				4A02334F1E1AC97500087E4C /* PlanTemplate.swift in Sources */,
 				4A02335A1E1AF36600087E4C /* ScriptureCollection.swift in Sources */,
 				4A0233541E1AE34400087E4C /* Strings.swift in Sources */,
+				4AEBFC441E3EEFD70097540F /* PlanDayDetailViewController.swift in Sources */,
 				4A0233581E1AEAC500087E4C /* Scripture.swift in Sources */,
 				4AEBFC3A1E3EC4E90097540F /* PlanOutlineViewModel.swift in Sources */,
+				4AEBFC461E3EF0550097540F /* PlanDayDetailViewModel.swift in Sources */,
 				4A0233561E1AE4A100087E4C /* Sequence.swift in Sources */,
 				4AEBFC371E3EC23F0097540F /* PlanOutlineViewController.swift in Sources */,
+				4AEBFC421E3EEF940097540F /* Segues.swift in Sources */,
 				4A0233391E1AC22000087E4C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -489,6 +530,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 9895358S97;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Sources/FiveDayPlan/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.sharplet.FiveDayPlan;
@@ -502,6 +547,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 9895358S97;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Sources/FiveDayPlan/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.sharplet.FiveDayPlan;

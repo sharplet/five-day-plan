@@ -1,2 +1,4 @@
+github "steipete/Aspects" "1.4.2"
 github "Quick/Nimble" "v5.1.1"
 github "Quick/Quick" "v1.0.0"
+github "thoughtbot/Perform" "aa71482dd9dfdc5ce3e8baf91ba08b751a8a04f9"

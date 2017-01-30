@@ -33,9 +33,16 @@ struct PlanOutlineRow {
   let title: String
   let subtitle: String?
 
+  private let scriptures: ScriptureCollection
+
   init(title: String, scriptures: ScriptureCollection) {
     self.title = title
     self.subtitle = scriptures.formattedSummary
+    self.scriptures = scriptures
+  }
+
+  var dayDetails: PlanDayDetailViewModel {
+    return PlanDayDetailViewModel(title: title, scriptures: scriptures)
   }
 }
 
