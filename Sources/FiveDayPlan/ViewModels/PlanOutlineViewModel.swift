@@ -35,12 +35,13 @@ struct PlanOutlineRow {
 
   init(title: String, scriptures: ScriptureCollection) {
     self.title = title
-    self.subtitle = scriptures.summary ?? defaultSummary(for: scriptures)
+    self.subtitle = scriptures.formattedSummary
   }
 }
 
-private func defaultSummary(for scriptures: ScriptureCollection) -> String {
-  return scriptures.chapters.lazy
-    .map { $0.description }
-    .joined(separator: ", ")
+private extension ScriptureCollection {
+  var formattedSummary: String {
+    return summary
+      .replacingOccurrences(of: "-", with: "–")
+  }
 }

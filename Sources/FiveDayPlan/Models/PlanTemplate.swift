@@ -43,7 +43,7 @@ private func makeScriptureCollection(_ line: String) throws -> ScriptureCollecti
     line.removeSubrange(bullet)
   }
 
-  var scriptures = ScriptureCollection()
+  var scriptures = ScriptureCollection(summary: line)
 
   while !line.isEmpty {
     let scripture: String
