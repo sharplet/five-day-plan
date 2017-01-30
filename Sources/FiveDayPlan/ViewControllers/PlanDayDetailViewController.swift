@@ -23,4 +23,10 @@ final class PlanDayDetailViewController: UITableViewController {
     cell.textLabel?.text = chapter.description
     return cell
   }
+
+  override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    details.openChapter(at: indexPath.row) { _ in
+      tableView.deselectRow(at: indexPath, animated: true)
+    }
+  }
 }

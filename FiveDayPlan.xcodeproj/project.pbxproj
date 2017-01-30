@@ -32,6 +32,8 @@
 		4AEBFC421E3EEF940097540F /* Segues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AEBFC411E3EEF940097540F /* Segues.swift */; };
 		4AEBFC441E3EEFD70097540F /* PlanDayDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AEBFC431E3EEFD70097540F /* PlanDayDetailViewController.swift */; };
 		4AEBFC461E3EF0550097540F /* PlanDayDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AEBFC451E3EF0550097540F /* PlanDayDetailViewModel.swift */; };
+		4AEBFC481E3EF6550097540F /* YouVersionScriptureProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AEBFC471E3EF6550097540F /* YouVersionScriptureProvider.swift */; };
+		4AEBFC4B1E3EFBE50097540F /* ScriptureProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AEBFC4A1E3EFBE50097540F /* ScriptureProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +89,8 @@
 		4AEBFC411E3EEF940097540F /* Segues.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Segues.swift; sourceTree = "<group>"; };
 		4AEBFC431E3EEFD70097540F /* PlanDayDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanDayDetailViewController.swift; sourceTree = "<group>"; };
 		4AEBFC451E3EF0550097540F /* PlanDayDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanDayDetailViewModel.swift; sourceTree = "<group>"; };
+		4AEBFC471E3EF6550097540F /* YouVersionScriptureProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YouVersionScriptureProvider.swift; sourceTree = "<group>"; };
+		4AEBFC4A1E3EFBE50097540F /* ScriptureProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScriptureProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				4A0233381E1AC22000087E4C /* AppDelegate.swift */,
+				4AEBFC471E3EF6550097540F /* YouVersionScriptureProvider.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -209,6 +214,7 @@
 				4A0233371E1AC20B00087E4C /* Controllers */,
 				4A0233521E1AE33300087E4C /* Extensions */,
 				4A02334D1E1AC96900087E4C /* Models */,
+				4AEBFC491E3EFBD40097540F /* Protocols */,
 				4A0233321E1AC1A800087E4C /* Storyboards */,
 				4AEBFC351E3EC2250097540F /* ViewControllers */,
 				4AEBFC381E3EC4DB0097540F /* ViewModels */,
@@ -262,6 +268,14 @@
 				4AEBFC391E3EC4E90097540F /* PlanOutlineViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		4AEBFC491E3EFBD40097540F /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				4AEBFC4A1E3EFBE50097540F /* ScriptureProvider.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -397,9 +411,11 @@
 			files = (
 				4A02334F1E1AC97500087E4C /* PlanTemplate.swift in Sources */,
 				4A02335A1E1AF36600087E4C /* ScriptureCollection.swift in Sources */,
+				4AEBFC4B1E3EFBE50097540F /* ScriptureProvider.swift in Sources */,
 				4A0233541E1AE34400087E4C /* Strings.swift in Sources */,
 				4AEBFC441E3EEFD70097540F /* PlanDayDetailViewController.swift in Sources */,
 				4A0233581E1AEAC500087E4C /* Scripture.swift in Sources */,
+				4AEBFC481E3EF6550097540F /* YouVersionScriptureProvider.swift in Sources */,
 				4AEBFC3A1E3EC4E90097540F /* PlanOutlineViewModel.swift in Sources */,
 				4AEBFC461E3EF0550097540F /* PlanDayDetailViewModel.swift in Sources */,
 				4A0233561E1AE4A100087E4C /* Sequence.swift in Sources */,
