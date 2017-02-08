@@ -24,7 +24,12 @@
 		4A0233581E1AEAC500087E4C /* Scripture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0233571E1AEAC500087E4C /* Scripture.swift */; };
 		4A02335A1E1AF36600087E4C /* ScriptureCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0233591E1AF36600087E4C /* ScriptureCollection.swift */; };
 		4A0233601E1B09F600087E4C /* CollectionExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A02335F1E1B09F600087E4C /* CollectionExtensions.swift */; };
+		4A1081721E4182C5008A9706 /* FiveDayPlan.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4A1081701E4182C5008A9706 /* FiveDayPlan.xcdatamodeld */; };
+		4A10817A1E423CE5008A9706 /* PersistentContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1081791E423CE5008A9706 /* PersistentContainer.swift */; };
+		4A10817C1E423DDA008A9706 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A10817B1E423DDA008A9706 /* Store.swift */; };
 		4A49B8AA1E1AB4160042A82A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A49B8A91E1AB4160042A82A /* Assets.xcassets */; };
+		4A912CD91E4AA068001B9875 /* UIAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A912CD81E4AA068001B9875 /* UIAlertController.swift */; };
+		4A912CDB1E4AA127001B9875 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A912CDA1E4AA127001B9875 /* UIViewController.swift */; };
 		4AEBFC371E3EC23F0097540F /* PlanOutlineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AEBFC361E3EC23F0097540F /* PlanOutlineViewController.swift */; };
 		4AEBFC3A1E3EC4E90097540F /* PlanOutlineViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AEBFC391E3EC4E90097540F /* PlanOutlineViewModel.swift */; };
 		4AEBFC3D1E3EEF2E0097540F /* Aspects.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AEBFC3B1E3EEF2E0097540F /* Aspects.framework */; };
@@ -77,11 +82,16 @@
 		4A0233571E1AEAC500087E4C /* Scripture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scripture.swift; sourceTree = "<group>"; };
 		4A0233591E1AF36600087E4C /* ScriptureCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScriptureCollection.swift; sourceTree = "<group>"; };
 		4A02335F1E1B09F600087E4C /* CollectionExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionExtensions.swift; sourceTree = "<group>"; };
+		4A1081711E4182C5008A9706 /* FiveDayPlan.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FiveDayPlan.xcdatamodel; sourceTree = "<group>"; };
+		4A1081791E423CE5008A9706 /* PersistentContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistentContainer.swift; sourceTree = "<group>"; };
+		4A10817B1E423DDA008A9706 /* Store.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		4A49B89F1E1AB4160042A82A /* FiveDayPlan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FiveDayPlan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A49B8A91E1AB4160042A82A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4A49B8AE1E1AB4160042A82A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4A49B8B31E1AB4160042A82A /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A49B8B91E1AB4160042A82A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4A912CD81E4AA068001B9875 /* UIAlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIAlertController.swift; sourceTree = "<group>"; };
+		4A912CDA1E4AA127001B9875 /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		4AEBFC361E3EC23F0097540F /* PlanOutlineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanOutlineViewController.swift; sourceTree = "<group>"; };
 		4AEBFC391E3EC4E90097540F /* PlanOutlineViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanOutlineViewModel.swift; sourceTree = "<group>"; };
 		4AEBFC3B1E3EEF2E0097540F /* Aspects.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Aspects.framework; path = Carthage/Build/iOS/Aspects.framework; sourceTree = "<group>"; };
@@ -129,6 +139,8 @@
 			isa = PBXGroup;
 			children = (
 				4A0233381E1AC22000087E4C /* AppDelegate.swift */,
+				4A1081791E423CE5008A9706 /* PersistentContainer.swift */,
+				4A10817B1E423DDA008A9706 /* Store.swift */,
 				4AEBFC471E3EF6550097540F /* YouVersionScriptureProvider.swift */,
 			);
 			path = Controllers;
@@ -176,6 +188,7 @@
 				4A02334E1E1AC97500087E4C /* PlanTemplate.swift */,
 				4A0233571E1AEAC500087E4C /* Scripture.swift */,
 				4A0233591E1AF36600087E4C /* ScriptureCollection.swift */,
+				4A1081701E4182C5008A9706 /* FiveDayPlan.xcdatamodeld */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -185,6 +198,8 @@
 			children = (
 				4A0233551E1AE4A100087E4C /* Sequence.swift */,
 				4A0233531E1AE34400087E4C /* Strings.swift */,
+				4A912CD81E4AA068001B9875 /* UIAlertController.swift */,
+				4A912CDA1E4AA127001B9875 /* UIViewController.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -411,7 +426,9 @@
 			files = (
 				4A02334F1E1AC97500087E4C /* PlanTemplate.swift in Sources */,
 				4A02335A1E1AF36600087E4C /* ScriptureCollection.swift in Sources */,
+				4A912CDB1E4AA127001B9875 /* UIViewController.swift in Sources */,
 				4AEBFC4B1E3EFBE50097540F /* ScriptureProvider.swift in Sources */,
+				4A10817C1E423DDA008A9706 /* Store.swift in Sources */,
 				4A0233541E1AE34400087E4C /* Strings.swift in Sources */,
 				4AEBFC441E3EEFD70097540F /* PlanDayDetailViewController.swift in Sources */,
 				4A0233581E1AEAC500087E4C /* Scripture.swift in Sources */,
@@ -420,8 +437,11 @@
 				4AEBFC461E3EF0550097540F /* PlanDayDetailViewModel.swift in Sources */,
 				4A0233561E1AE4A100087E4C /* Sequence.swift in Sources */,
 				4AEBFC371E3EC23F0097540F /* PlanOutlineViewController.swift in Sources */,
+				4A10817A1E423CE5008A9706 /* PersistentContainer.swift in Sources */,
 				4AEBFC421E3EEF940097540F /* Segues.swift in Sources */,
 				4A0233391E1AC22000087E4C /* AppDelegate.swift in Sources */,
+				4A1081721E4182C5008A9706 /* FiveDayPlan.xcdatamodeld in Sources */,
+				4A912CD91E4AA068001B9875 /* UIAlertController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -636,6 +656,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		4A1081701E4182C5008A9706 /* FiveDayPlan.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				4A1081711E4182C5008A9706 /* FiveDayPlan.xcdatamodel */,
+			);
+			currentVersion = 4A1081711E4182C5008A9706 /* FiveDayPlan.xcdatamodel */;
+			path = FiveDayPlan.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 4A49B8971E1AB4160042A82A /* Project object */;
 }
