@@ -1,4 +1,4 @@
-import Foundation
+import CoreData
 
 extension PlanDay {
   override public class func keyPathsForValuesAffectingValue(forKey key: String) -> Set<String> {
@@ -14,6 +14,19 @@ extension PlanDay {
     }
 
     return keyPaths
+  }
+
+  convenience init(scriptures: ScriptureCollection, order: Int, week: Int, insertInto context: NSManagedObjectContext?) {
+    self.init(entity: type(of: self).entity(), insertInto: context)
+
+    self.summary = scriptures.summary
+    self.order = Int16(order)
+    self.week = Int16(week)
+
+    for scripture in scriptures.chapters {
+      let chapter = PlanChapter(scripture: scripture, insertInto: context)
+      addToChapters(chapter)
+    }
   }
 
   var formattedSummary: String {

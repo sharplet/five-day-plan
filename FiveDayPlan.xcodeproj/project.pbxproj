@@ -32,6 +32,7 @@
 		4A912CDB1E4AA127001B9875 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A912CDA1E4AA127001B9875 /* UIViewController.swift */; };
 		4A912CDF1E4AAF59001B9875 /* PlanDay+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A912CDE1E4AAF59001B9875 /* PlanDay+Extensions.swift */; };
 		4ABFD2DC1E4AC80900B420FC /* PlanChapter+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ABFD2DB1E4AC80900B420FC /* PlanChapter+Extensions.swift */; };
+		4ABFD2DE1E4B709200B420FC /* Plan+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ABFD2DD1E4B709200B420FC /* Plan+Extensions.swift */; };
 		4AEBFC371E3EC23F0097540F /* PlanOutlineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AEBFC361E3EC23F0097540F /* PlanOutlineViewController.swift */; };
 		4AEBFC3A1E3EC4E90097540F /* PlanOutlineViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AEBFC391E3EC4E90097540F /* PlanOutlineViewModel.swift */; };
 		4AEBFC3D1E3EEF2E0097540F /* Aspects.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AEBFC3B1E3EEF2E0097540F /* Aspects.framework */; };
@@ -96,6 +97,7 @@
 		4A912CDA1E4AA127001B9875 /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		4A912CDE1E4AAF59001B9875 /* PlanDay+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PlanDay+Extensions.swift"; sourceTree = "<group>"; };
 		4ABFD2DB1E4AC80900B420FC /* PlanChapter+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PlanChapter+Extensions.swift"; sourceTree = "<group>"; };
+		4ABFD2DD1E4B709200B420FC /* Plan+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Plan+Extensions.swift"; sourceTree = "<group>"; };
 		4AEBFC361E3EC23F0097540F /* PlanOutlineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanOutlineViewController.swift; sourceTree = "<group>"; };
 		4AEBFC391E3EC4E90097540F /* PlanOutlineViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanOutlineViewModel.swift; sourceTree = "<group>"; };
 		4AEBFC3B1E3EEF2E0097540F /* Aspects.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Aspects.framework; path = Carthage/Build/iOS/Aspects.framework; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 		4A02334D1E1AC96900087E4C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				4ABFD2DD1E4B709200B420FC /* Plan+Extensions.swift */,
 				4ABFD2DB1E4AC80900B420FC /* PlanChapter+Extensions.swift */,
 				4A912CDE1E4AAF59001B9875 /* PlanDay+Extensions.swift */,
 				4A02334E1E1AC97500087E4C /* PlanTemplate.swift */,
@@ -438,6 +441,7 @@
 				4A10817C1E423DDA008A9706 /* Store.swift in Sources */,
 				4A0233541E1AE34400087E4C /* Strings.swift in Sources */,
 				4AEBFC441E3EEFD70097540F /* PlanDayDetailViewController.swift in Sources */,
+				4ABFD2DE1E4B709200B420FC /* Plan+Extensions.swift in Sources */,
 				4A0233581E1AEAC500087E4C /* Scripture.swift in Sources */,
 				4AEBFC481E3EF6550097540F /* YouVersionScriptureProvider.swift in Sources */,
 				4AEBFC3A1E3EC4E90097540F /* PlanOutlineViewModel.swift in Sources */,
