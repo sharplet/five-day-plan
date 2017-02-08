@@ -1,3 +1,4 @@
+import CircleProgressView
 import CoreData
 import UIKit
 
@@ -47,9 +48,13 @@ final class PlanOutlineViewController: UITableViewController {
 
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let day = viewModel[indexPath]
-    let cell = tableView.dequeueReusableCell(withIdentifier: "Day Summary", for: indexPath)
+    let cell = tableView.dequeueReusableCell(withIdentifier: "Day Summary", for: indexPath) as! DaySummaryCell
     cell.textLabel?.text = day.name
+    cell.textLabel?.textColor = day.isComplete ? .lightGray : nil
+    cell.detailTextLabel?.textColor = day.isComplete ? .lightGray : nil
     cell.detailTextLabel?.text = day.formattedSummary
+    cell.progressView?.isHidden = !day.isInProgress
+    cell.progressView?.progress = day.percentageRead
     return cell
   }
 
@@ -65,6 +70,15 @@ final class PlanOutlineViewController: UITableViewController {
 extension PlanOutlineViewController: NSFetchedResultsControllerDelegate {
   func controllerWillChangeContent(_: NSFetchedResultsController<NSFetchRequestResult>) {
     tableView.beginUpdates()
+  }
+
+  func controller(_: NSFetchedResultsController<NSFetchRequestResult>, didChange _: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath _: IndexPath?) {
+    switch type {
+    case .update:
+      tableView.reloadRows(at: [indexPath!], with: .none)
+    default:
+      fatalError("unexpected row change type: \(type.rawValue)")
+    }
   }
 
   func controller(_: NSFetchedResultsController<NSFetchRequestResult>, didChange _: NSFetchedResultsSectionInfo, atSectionIndex sectionIndex: Int, for type: NSFetchedResultsChangeType) {

@@ -27,6 +27,9 @@
 		4A1081721E4182C5008A9706 /* FiveDayPlan.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4A1081701E4182C5008A9706 /* FiveDayPlan.xcdatamodeld */; };
 		4A10817A1E423CE5008A9706 /* PersistentContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1081791E423CE5008A9706 /* PersistentContainer.swift */; };
 		4A10817C1E423DDA008A9706 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A10817B1E423DDA008A9706 /* Store.swift */; };
+		4A12C7051E4BC1100041FFD6 /* CircleProgressView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A12C7041E4BC1100041FFD6 /* CircleProgressView.framework */; };
+		4A12C7061E4BC1100041FFD6 /* CircleProgressView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4A12C7041E4BC1100041FFD6 /* CircleProgressView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4A12C70A1E4BC2F80041FFD6 /* DaySummaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A12C7091E4BC2F80041FFD6 /* DaySummaryCell.swift */; };
 		4A49B8AA1E1AB4160042A82A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A49B8A91E1AB4160042A82A /* Assets.xcassets */; };
 		4A912CD91E4AA068001B9875 /* UIAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A912CD81E4AA068001B9875 /* UIAlertController.swift */; };
 		4A912CDB1E4AA127001B9875 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A912CDA1E4AA127001B9875 /* UIViewController.swift */; };
@@ -68,6 +71,17 @@
 			name = "Copy Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		4A12C7071E4BC1100041FFD6 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				4A12C7061E4BC1100041FFD6 /* CircleProgressView.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -89,6 +103,8 @@
 		4A1081711E4182C5008A9706 /* FiveDayPlan.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FiveDayPlan.xcdatamodel; sourceTree = "<group>"; };
 		4A1081791E423CE5008A9706 /* PersistentContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistentContainer.swift; sourceTree = "<group>"; };
 		4A10817B1E423DDA008A9706 /* Store.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		4A12C7041E4BC1100041FFD6 /* CircleProgressView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CircleProgressView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A12C7091E4BC2F80041FFD6 /* DaySummaryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DaySummaryCell.swift; sourceTree = "<group>"; };
 		4A49B89F1E1AB4160042A82A /* FiveDayPlan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FiveDayPlan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A49B8A91E1AB4160042A82A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4A49B8AE1E1AB4160042A82A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -116,6 +132,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A12C7051E4BC1100041FFD6 /* CircleProgressView.framework in Frameworks */,
 				4AEBFC3D1E3EEF2E0097540F /* Aspects.framework in Frameworks */,
 				4AEBFC3E1E3EEF2E0097540F /* Perform.framework in Frameworks */,
 			);
@@ -166,8 +183,9 @@
 			isa = PBXGroup;
 			children = (
 				4AEBFC3B1E3EEF2E0097540F /* Aspects.framework */,
-				4AEBFC3C1E3EEF2E0097540F /* Perform.framework */,
+				4A12C7041E4BC1100041FFD6 /* CircleProgressView.framework */,
 				4A02333E1E1AC51400087E4C /* Nimble.framework */,
+				4AEBFC3C1E3EEF2E0097540F /* Perform.framework */,
 				4A02333F1E1AC51400087E4C /* Quick.framework */,
 			);
 			name = Frameworks;
@@ -216,6 +234,14 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		4A12C7081E4BC2E10041FFD6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4A12C7091E4BC2F80041FFD6 /* DaySummaryCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		4A49B8961E1AB4160042A82A = {
 			isa = PBXGroup;
 			children = (
@@ -245,6 +271,7 @@
 				4A0233321E1AC1A800087E4C /* Storyboards */,
 				4AEBFC351E3EC2250097540F /* ViewControllers */,
 				4AEBFC381E3EC4DB0097540F /* ViewModels */,
+				4A12C7081E4BC2E10041FFD6 /* Views */,
 				4A49B8A91E1AB4160042A82A /* Assets.xcassets */,
 				4A0233301E1AC0B000087E4C /* Plans */,
 				4A49B8AE1E1AB4160042A82A /* Info.plist */,
@@ -316,6 +343,7 @@
 				4A49B89C1E1AB4160042A82A /* Frameworks */,
 				4A49B89D1E1AB4160042A82A /* Resources */,
 				4AEBFC401E3EEF4E0097540F /* Copy Carthage Frameworks */,
+				4A12C7071E4BC1100041FFD6 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -420,6 +448,7 @@
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/Aspects.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Perform.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/CircleProgressView.framework",
 			);
 			name = "Copy Carthage Frameworks";
 			outputPaths = (
@@ -446,6 +475,7 @@
 				4AEBFC441E3EEFD70097540F /* PlanDayDetailViewController.swift in Sources */,
 				4ABFD2DE1E4B709200B420FC /* Plan+Extensions.swift in Sources */,
 				4A0233581E1AEAC500087E4C /* Scripture.swift in Sources */,
+				4A12C70A1E4BC2F80041FFD6 /* DaySummaryCell.swift in Sources */,
 				4AEBFC481E3EF6550097540F /* YouVersionScriptureProvider.swift in Sources */,
 				4AEBFC3A1E3EC4E90097540F /* PlanOutlineViewModel.swift in Sources */,
 				4AEBFC461E3EF0550097540F /* PlanDayDetailViewModel.swift in Sources */,

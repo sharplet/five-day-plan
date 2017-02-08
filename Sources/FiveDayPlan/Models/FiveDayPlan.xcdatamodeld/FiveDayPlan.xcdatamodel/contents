@@ -12,6 +12,7 @@
         <relationship name="day" maxCount="1" deletionRule="Nullify" destinationEntity="PlanDay" inverseName="chapters" inverseEntity="PlanDay" syncable="YES"/>
     </entity>
     <entity name="PlanDay" representedClassName="PlanDay" syncable="YES" codeGenerationType="class">
+        <attribute name="chaptersRead" attributeType="Integer 16" minValueString="0" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="order" attributeType="Integer 16" minValueString="1" defaultValueString="1" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="summary" attributeType="String" syncable="YES"/>
         <attribute name="week" attributeType="Integer 16" minValueString="1" defaultValueString="1" usesScalarValueType="YES" syncable="YES"/>
@@ -21,6 +22,6 @@
     <elements>
         <element name="Plan" positionX="-135" positionY="-177" width="128" height="60"/>
         <element name="PlanChapter" positionX="277" positionY="-24" width="128" height="135"/>
-        <element name="PlanDay" positionX="70" positionY="-111" width="128" height="120"/>
+        <element name="PlanDay" positionX="70" positionY="-111" width="128" height="135"/>
     </elements>
 </model>

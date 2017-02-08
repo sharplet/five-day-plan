@@ -1,1 +1,2 @@
+github "CardinalNow/iOS-CircleProgressView" ~> 1.1
 github "thoughtbot/Perform" "swift-3"
