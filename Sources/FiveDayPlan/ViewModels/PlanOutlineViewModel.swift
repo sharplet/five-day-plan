@@ -1,6 +1,8 @@
+import CoreData
 import Foundation
 
 final class PlanOutlineViewModel {
+  let fetchController: NSFetchedResultsController<PlanDay>
   let store: Store
   private let getTemplate: () -> PlanTemplate
   private var state = InitialisationState.uninitialised
@@ -8,9 +10,14 @@ final class PlanOutlineViewModel {
   private(set) var sections: [PlanOutlineSection]
 
   init(plan: @autoclosure @escaping () -> PlanTemplate, store: Store) {
+    self.fetchController = store.planOutlineController()
     self.getTemplate = plan
     self.sections = plan().weeks.map(PlanOutlineSection.init)
     self.store = store
+  }
+
+  func performFetch() throws {
+    try fetchController.performFetch()
   }
 
   func initialise(completion: @escaping (Error?) -> Void) {

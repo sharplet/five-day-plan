@@ -53,6 +53,10 @@ final class PersistentContainer {
     }
   }
 
+  var unsafeViewContext: NSManagedObjectContext {
+    return container.viewContext
+  }
+
   private func waitForInitialization() throws {
     lock.lock(whenCondition: isInitialized)
     defer { lock.unlock() }

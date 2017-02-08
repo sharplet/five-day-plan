@@ -7,6 +7,7 @@ final class Store {
 
   init() {
     container = PersistentContainer(name: "FiveDayPlan")
+    container.unsafeViewContext.automaticallyMergesChangesFromParent = true
   }
 
   func initialisePlan(_ plan: @autoclosure @escaping () -> PlanTemplate, completionHandler: @escaping (Error?) -> Void) {
@@ -49,6 +50,21 @@ final class Store {
         }
       }
     }
+  }
+
+  func planOutlineController() -> NSFetchedResultsController<PlanDay> {
+    let request: NSFetchRequest<PlanDay> = PlanDay.fetchRequest()
+    request.sortDescriptors = [
+      NSSortDescriptor(key: #keyPath(PlanDay.week), ascending: true),
+      NSSortDescriptor(key: #keyPath(PlanDay.order), ascending: true),
+    ]
+
+    return NSFetchedResultsController(
+      fetchRequest: request,
+      managedObjectContext: container.unsafeViewContext,
+      sectionNameKeyPath: #keyPath(PlanDay.weekName),
+      cacheName: nil
+    )
   }
 
   private func performBackgroundTask(qos: DispatchQoS.QoSClass, failingWith completionHandler: @escaping (Error?) -> Void, block: @escaping (NSManagedObjectContext) throws -> Void) {
