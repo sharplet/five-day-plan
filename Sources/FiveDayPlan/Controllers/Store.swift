@@ -12,10 +12,7 @@ final class Store {
 
   func initialisePlan(_ plan: @autoclosure @escaping () -> PlanTemplate, completionHandler: @escaping (Error?) -> Void) {
     withViewContext(failingWith: completionHandler) { context in
-      let currentPlanRequest: NSFetchRequest<Plan> = Plan.fetchRequest()
-      currentPlanRequest.fetchLimit = 1
-
-      let currentPlan = try context.fetch(currentPlanRequest).first
+      let currentPlan = try Plan.first(in: context)
 
       guard currentPlan == nil else {
         completionHandler(nil)
