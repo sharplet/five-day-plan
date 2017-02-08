@@ -1,10 +1,36 @@
-import struct Foundation.IndexPath
+import Foundation
 
 final class PlanOutlineViewModel {
+  let store: Store
+  private let getTemplate: () -> PlanTemplate
+  private var state = InitialisationState.uninitialised
+
   private(set) var sections: [PlanOutlineSection]
 
-  init(plan: PlanTemplate) {
-    sections = plan.weeks.map(PlanOutlineSection.init)
+  init(plan: @autoclosure @escaping () -> PlanTemplate, store: Store) {
+    self.getTemplate = plan
+    self.sections = plan().weeks.map(PlanOutlineSection.init)
+    self.store = store
+  }
+
+  func initialise(completion: @escaping (Error?) -> Void) {
+    dispatchPrecondition(condition: .onQueue(.main))
+
+    guard state.isUninitialised else { return }
+
+    state = .loading
+
+    store.initialisePlan(self.getTemplate()) { error in
+      dispatchPrecondition(condition: .onQueue(.main))
+
+      if error == nil {
+        self.state = .initialised
+      } else {
+        self.state = .uninitialised
+      }
+
+      completion(error)
+    }
   }
 
   func numberOfRows(inSection section: Int) -> Int {
@@ -13,6 +39,23 @@ final class PlanOutlineViewModel {
 
   subscript(indexPath: IndexPath) -> PlanOutlineRow {
     return sections[indexPath.section].rows[indexPath.row]
+  }
+}
+
+private extension PlanOutlineViewModel {
+  enum InitialisationState {
+    case uninitialised
+    case loading
+    case initialised
+
+    var isUninitialised: Bool {
+      switch self {
+      case .uninitialised:
+        return true
+      case .loading, .initialised:
+        return false
+      }
+    }
   }
 }
 

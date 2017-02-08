@@ -9,7 +9,7 @@ final class Store {
     container = PersistentContainer(name: "FiveDayPlan")
   }
 
-  func initialisePlan(completionHandler: @escaping (Error?) -> Void) {
+  func initialisePlan(_ plan: @autoclosure @escaping () -> PlanTemplate, completionHandler: @escaping (Error?) -> Void) {
     withViewContext(failingWith: completionHandler) { context in
       let currentPlanRequest: NSFetchRequest<Plan> = Plan.fetchRequest()
       currentPlanRequest.fetchLimit = 1
@@ -22,7 +22,7 @@ final class Store {
       }
 
       self.performBackgroundTask(qos: .userInitiated, failingWith: completionHandler) { context in
-        let template: PlanTemplate = .year2017
+        let template = plan()
 
         let plan = NSEntityDescription.insertNewObject(forEntityName: Plan.entity().name!, into: context) as! Plan
 
