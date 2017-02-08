@@ -43,6 +43,19 @@ final class Store {
     )
   }
 
+  func planDayController(for day: PlanDay) -> NSFetchedResultsController<PlanChapter> {
+    let request: NSFetchRequest<PlanChapter> = PlanChapter.fetchRequest()
+    request.predicate = NSPredicate(format: "day == %@", day)
+    request.sortDescriptors = [.byPlanDayChapter]
+
+    return NSFetchedResultsController(
+      fetchRequest: request,
+      managedObjectContext: container.unsafeViewContext,
+      sectionNameKeyPath: #keyPath(PlanChapter.day.name),
+      cacheName: nil
+    )
+  }
+
   private func performBackgroundTask(qos: DispatchQoS.QoSClass, failingWith completionHandler: @escaping (Error?) -> Void, block: @escaping (NSManagedObjectContext) throws -> Void) {
     container.performBackgroundTask(qos: qos) { context, error in
       func complete(with error: Error? = nil) {

@@ -1,23 +1,34 @@
+import CoreData
+
 struct PlanDayDetailViewModel {
   let title: String
   let provider: ScriptureProvider
-  private let chapters: [PlanChapter]
+  let fetchController: NSFetchedResultsController<PlanChapter>
 
-  init(day: PlanDay, provider: ScriptureProvider = YouVersionScriptureProvider()) {
-    self.title = day.summary!
+  init(day: PlanDay, provider: ScriptureProvider = YouVersionScriptureProvider(), store: Store) {
+    self.title = day.name
     self.provider = provider
-    self.chapters = day.chapters!.array as! [PlanChapter]
+    self.fetchController = store.planDayController(for: day)
   }
 
-  var numberOfChapters: Int {
-    return chapters.count
+  func performFetch() throws {
+    try fetchController.performFetch()
   }
 
-  subscript(index: Int) -> Scripture.Chapter {
-    return Scripture.Chapter(chapters[index])
+  var numberOfSections: Int {
+    return fetchController.sections?.count ?? 0
   }
 
-  func openChapter(at index: Int, completionHandler: @escaping (Bool) -> Void) {
-    provider.open(self[index], completionHandler: completionHandler)
+  func numberOfChapters(in section: Int) -> Int {
+    return fetchController.sections?[section].numberOfObjects ?? 0
+  }
+
+  subscript(indexPath: IndexPath) -> Scripture.Chapter {
+    let chapter = fetchController.object(at: indexPath)
+    return Scripture.Chapter(chapter)
+  }
+
+  func openChapter(at indexPath: IndexPath, completionHandler: @escaping (Bool) -> Void) {
+    provider.open(self[indexPath], completionHandler: completionHandler)
   }
 }

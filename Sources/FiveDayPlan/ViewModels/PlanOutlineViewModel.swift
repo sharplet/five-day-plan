@@ -54,7 +54,7 @@ final class PlanOutlineViewModel {
   }
 
   func dayDetails(at indexPath: IndexPath) -> PlanDayDetailViewModel {
-    return PlanDayDetailViewModel(day: self[indexPath])
+    return PlanDayDetailViewModel(day: self[indexPath], store: store)
   }
 }
 

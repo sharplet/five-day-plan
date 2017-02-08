@@ -23,8 +23,8 @@ extension PlanDay {
     self.order = Int16(order)
     self.week = Int16(week)
 
-    for scripture in scriptures.chapters {
-      let chapter = PlanChapter(scripture: scripture, insertInto: context)
+    for (offset, scripture) in scriptures.chapters.enumerated() {
+      let chapter = PlanChapter(scripture: scripture, order: offset + 1, insertInto: context)
       addToChapters(chapter)
     }
   }
