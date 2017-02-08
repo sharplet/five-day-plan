@@ -48,3 +48,13 @@ extension PlanDay {
     )
   }
 }
+
+extension NSSortDescriptor {
+  static var byPlanWeek: NSSortDescriptor {
+    return NSSortDescriptor(key: #keyPath(PlanDay.week), ascending: true)
+  }
+
+  static var byPlanDay: NSSortDescriptor {
+    return NSSortDescriptor(key: #keyPath(PlanDay.order), ascending: true)
+  }
+}

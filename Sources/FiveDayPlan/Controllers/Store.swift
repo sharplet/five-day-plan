@@ -33,10 +33,7 @@ final class Store {
 
   func planOutlineController() -> NSFetchedResultsController<PlanDay> {
     let request: NSFetchRequest<PlanDay> = PlanDay.fetchRequest()
-    request.sortDescriptors = [
-      NSSortDescriptor(key: #keyPath(PlanDay.week), ascending: true),
-      NSSortDescriptor(key: #keyPath(PlanDay.order), ascending: true),
-    ]
+    request.sortDescriptors = [.byPlanWeek, .byPlanDay]
 
     return NSFetchedResultsController(
       fetchRequest: request,
