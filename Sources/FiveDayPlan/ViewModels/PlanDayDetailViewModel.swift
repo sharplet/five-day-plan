@@ -1,15 +1,23 @@
 struct PlanDayDetailViewModel {
   let title: String
-  let chapters: [Scripture.Chapter]
   let provider: ScriptureProvider
+  private let chapters: [PlanChapter]
 
-  init(title: String, scriptures: ScriptureCollection, provider: ScriptureProvider = YouVersionScriptureProvider()) {
-    self.title = title
-    self.chapters = scriptures.chapters
+  init(day: PlanDay, provider: ScriptureProvider = YouVersionScriptureProvider()) {
+    self.title = day.summary!
     self.provider = provider
+    self.chapters = day.chapters!.array as! [PlanChapter]
+  }
+
+  var numberOfChapters: Int {
+    return chapters.count
+  }
+
+  subscript(index: Int) -> Scripture.Chapter {
+    return Scripture.Chapter(chapters[index])
   }
 
   func openChapter(at index: Int, completionHandler: @escaping (Bool) -> Void) {
-    provider.open(chapters[index], completionHandler: completionHandler)
+    provider.open(self[index], completionHandler: completionHandler)
   }
 }

@@ -34,30 +34,30 @@ final class PlanOutlineViewController: UITableViewController {
   }
 
   override func numberOfSections(in _: UITableView) -> Int {
-    return viewModel.fetchController.sections?.count ?? 0
+    return viewModel.numberOfSections
   }
 
   override func tableView(_: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return viewModel.fetchController.sections?[section].numberOfObjects ?? 0
+    return viewModel.numberOfRows(inSection: section)
   }
 
   override func tableView(_: UITableView, titleForHeaderInSection section: Int) -> String? {
-    return viewModel.fetchController.sections?[section].name
+    return viewModel.titleForHeader(inSection: section)
   }
 
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let day = viewModel.fetchController.object(at: indexPath)
+    let day = viewModel[indexPath]
     let cell = tableView.dequeueReusableCell(withIdentifier: "Day Summary", for: indexPath)
     cell.textLabel?.text = day.name
-    cell.detailTextLabel?.text = day.summary
+    cell.detailTextLabel?.text = day.formattedSummary
     return cell
   }
 
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    let week = viewModel.sections[indexPath.section]
-    navigationItem.backBarButtonItem = UIBarButtonItem(title: week.title, style: .plain, target: nil, action: nil)
+    let weekTitle = viewModel.titleForHeader(inSection: indexPath.section)
+    navigationItem.backBarButtonItem = UIBarButtonItem(title: weekTitle, style: .plain, target: nil, action: nil)
     perform(.showDayDetail) {
-      $0.details = self.viewModel[indexPath].dayDetails
+      $0.details = self.viewModel.dayDetails(at: indexPath)
     }
   }
 }

@@ -16,6 +16,11 @@ extension PlanDay {
     return keyPaths
   }
 
+  var formattedSummary: String {
+    return summary!
+      .replacingOccurrences(of: "-", with: "–")
+  }
+
   var name: String {
     return String(
       format: NSLocalizedString("Day %d", comment: "Day description format"),

@@ -10,7 +10,7 @@ final class PlanDayDetailViewController: UITableViewController {
   }
 
   override func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
-    return details.chapters.count
+    return details.numberOfChapters
   }
 
   override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -18,7 +18,7 @@ final class PlanDayDetailViewController: UITableViewController {
   }
 
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let chapter = details.chapters[indexPath.row]
+    let chapter = details[indexPath.row]
     let cell = tableView.dequeueReusableCell(withIdentifier: "Chapter", for: indexPath)
     cell.textLabel?.text = chapter.description
     return cell

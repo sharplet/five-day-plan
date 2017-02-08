@@ -37,7 +37,11 @@ final class Store {
 
             for scripture in scriptures.chapters {
               let chapter = NSEntityDescription.insertNewObject(forEntityName: PlanChapter.entity().name!, into: context) as! PlanChapter
+              chapter.book = scripture.book.rawValue
               chapter.name = scripture.description
+              if let number = scripture.chapter {
+                chapter.number = Int16(number)
+              }
               day.addToChapters(chapter)
             }
           }

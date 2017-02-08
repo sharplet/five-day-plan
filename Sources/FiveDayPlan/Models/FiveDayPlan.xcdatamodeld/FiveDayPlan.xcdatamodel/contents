@@ -4,8 +4,10 @@
         <relationship name="days" toMany="YES" minCount="1" deletionRule="Cascade" destinationEntity="PlanDay" inverseName="plan" inverseEntity="PlanDay" syncable="YES"/>
     </entity>
     <entity name="PlanChapter" representedClassName="PlanChapter" syncable="YES" codeGenerationType="class">
+        <attribute name="book" attributeType="String" syncable="YES"/>
         <attribute name="isRead" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="name" attributeType="String" syncable="YES"/>
+        <attribute name="number" attributeType="Integer 16" minValueString="1" defaultValueString="1" usesScalarValueType="YES" syncable="YES"/>
         <relationship name="day" maxCount="1" deletionRule="Nullify" destinationEntity="PlanDay" inverseName="chapters" inverseEntity="PlanDay" syncable="YES"/>
     </entity>
     <entity name="PlanDay" representedClassName="PlanDay" syncable="YES" codeGenerationType="class">
@@ -17,7 +19,7 @@
     </entity>
     <elements>
         <element name="Plan" positionX="-135" positionY="-177" width="128" height="60"/>
-        <element name="PlanChapter" positionX="277" positionY="-24" width="128" height="88"/>
+        <element name="PlanChapter" positionX="277" positionY="-24" width="128" height="120"/>
         <element name="PlanDay" positionX="70" positionY="-111" width="128" height="118"/>
     </elements>
 </model>

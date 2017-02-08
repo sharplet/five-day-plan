@@ -7,12 +7,9 @@ final class PlanOutlineViewModel {
   private let getTemplate: () -> PlanTemplate
   private var state = InitialisationState.uninitialised
 
-  private(set) var sections: [PlanOutlineSection]
-
   init(plan: @autoclosure @escaping () -> PlanTemplate, store: Store) {
     self.fetchController = store.planOutlineController()
     self.getTemplate = plan
-    self.sections = plan().weeks.map(PlanOutlineSection.init)
     self.store = store
   }
 
@@ -40,12 +37,24 @@ final class PlanOutlineViewModel {
     }
   }
 
-  func numberOfRows(inSection section: Int) -> Int {
-    return sections[section].rows.count
+  var numberOfSections: Int {
+    return fetchController.sections?.count ?? 0
   }
 
-  subscript(indexPath: IndexPath) -> PlanOutlineRow {
-    return sections[indexPath.section].rows[indexPath.row]
+  func numberOfRows(inSection section: Int) -> Int {
+    return fetchController.sections?[section].numberOfObjects ?? 0
+  }
+
+  func titleForHeader(inSection section: Int) -> String? {
+    return fetchController.sections?[section].name
+  }
+
+  subscript(indexPath: IndexPath) -> PlanDay {
+    return fetchController.object(at: indexPath)
+  }
+
+  func dayDetails(at indexPath: IndexPath) -> PlanDayDetailViewModel {
+    return PlanDayDetailViewModel(day: self[indexPath])
   }
 }
 
@@ -63,42 +72,5 @@ private extension PlanOutlineViewModel {
         return false
       }
     }
-  }
-}
-
-struct PlanOutlineSection {
-  let title: String
-
-  private(set) var rows: [PlanOutlineRow]
-
-  init(week: PlanTemplate.Week) {
-    title = week.title
-    rows = week.days.enumerated().map { offset, scriptures in
-      PlanOutlineRow(title: "Day \(offset + 1)", scriptures: scriptures)
-    }
-  }
-}
-
-struct PlanOutlineRow {
-  let title: String
-  let subtitle: String?
-
-  private let scriptures: ScriptureCollection
-
-  init(title: String, scriptures: ScriptureCollection) {
-    self.title = title
-    self.subtitle = scriptures.formattedSummary
-    self.scriptures = scriptures
-  }
-
-  var dayDetails: PlanDayDetailViewModel {
-    return PlanDayDetailViewModel(title: title, scriptures: scriptures)
-  }
-}
-
-private extension ScriptureCollection {
-  var formattedSummary: String {
-    return summary
-      .replacingOccurrences(of: "-", with: "–")
   }
 }
