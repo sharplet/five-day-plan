@@ -56,7 +56,7 @@ final class Store {
     )
   }
 
-  private func performBackgroundTask(qos: DispatchQoS.QoSClass, failingWith completionHandler: @escaping (Error?) -> Void, block: @escaping (NSManagedObjectContext) throws -> Void) {
+  func performBackgroundTask(qos: DispatchQoS.QoSClass = .default, failingWith completionHandler: @escaping (Error?) -> Void, block: @escaping (NSManagedObjectContext) throws -> Void) {
     container.performBackgroundTask(qos: qos) { context, error in
       func complete(with error: Error? = nil) {
         DispatchQueue.main.async {

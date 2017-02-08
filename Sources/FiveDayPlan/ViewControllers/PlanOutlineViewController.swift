@@ -72,7 +72,7 @@ extension PlanOutlineViewController: NSFetchedResultsControllerDelegate {
     case .insert:
       tableView.insertSections([sectionIndex], with: .fade)
     default:
-      fatalError("unexpected section change type: \(type)")
+      fatalError("unexpected section change type: \(type.rawValue)")
     }
   }
 

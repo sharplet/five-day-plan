@@ -4,11 +4,13 @@ struct PlanDayDetailViewModel {
   let title: String
   let provider: ScriptureProvider
   let fetchController: NSFetchedResultsController<PlanChapter>
+  let store: Store
 
   init(day: PlanDay, provider: ScriptureProvider = YouVersionScriptureProvider(), store: Store) {
     self.title = day.name
     self.provider = provider
     self.fetchController = store.planDayController(for: day)
+    self.store = store
   }
 
   func performFetch() throws {
@@ -23,12 +25,34 @@ struct PlanDayDetailViewModel {
     return fetchController.sections?[section].numberOfObjects ?? 0
   }
 
-  subscript(indexPath: IndexPath) -> Scripture.Chapter {
-    let chapter = fetchController.object(at: indexPath)
-    return Scripture.Chapter(chapter)
+  subscript(indexPath: IndexPath) -> PlanChapter {
+    return fetchController.object(at: indexPath)
   }
 
-  func openChapter(at indexPath: IndexPath, completionHandler: @escaping (Bool) -> Void) {
-    provider.open(self[indexPath], completionHandler: completionHandler)
+  func openChapter(at indexPath: IndexPath, completionHandler: @escaping (Error?) -> Void) {
+    let chapter = Scripture.Chapter(self[indexPath])
+    provider.open(chapter) { success in
+      if success {
+        self.markAsRead(at: indexPath, completionHandler: completionHandler)
+      } else {
+        completionHandler(nil)
+      }
+    }
+  }
+
+  private func markAsRead(at indexPath: IndexPath, completionHandler: @escaping (Error?) -> Void) {
+    let objectID: NSManagedObjectID
+
+    do {
+      let chapter = self[indexPath]
+      guard !chapter.isRead else { completionHandler(nil); return }
+      objectID = self[indexPath].objectID
+    }
+
+    store.performBackgroundTask(failingWith: completionHandler) { context in
+      let chapter = PlanChapter.fetch(by: objectID, in: context)
+      chapter.isRead = true
+      try context.save()
+    }
   }
 }
