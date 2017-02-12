@@ -72,10 +72,12 @@ extension PlanOutlineViewController: NSFetchedResultsControllerDelegate {
     tableView.beginUpdates()
   }
 
-  func controller(_: NSFetchedResultsController<NSFetchRequestResult>, didChange _: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath _: IndexPath?) {
+  func controller(_: NSFetchedResultsController<NSFetchRequestResult>, didChange _: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
     switch type {
     case .update:
       tableView.reloadRows(at: [indexPath!], with: .none)
+    case .insert:
+      tableView.insertRows(at: [newIndexPath!], with: .fade)
     default:
       fatalError("unexpected row change type: \(type.rawValue)")
     }
