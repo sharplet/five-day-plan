@@ -1,23 +1,6 @@
 import CoreData
 
 extension PlanDay {
-  private static var context: UInt8 = 0
-
-  override public class func keyPathsForValuesAffectingValue(forKey key: String) -> Set<String> {
-    var keyPaths = super.keyPathsForValuesAffectingValue(forKey: key)
-
-    switch key {
-    case #keyPath(name):
-      keyPaths.insert(#keyPath(order))
-    case #keyPath(weekName):
-      keyPaths.insert(#keyPath(week))
-    default:
-      break
-    }
-
-    return keyPaths
-  }
-
   convenience init(scriptures: ScriptureCollection, order: Int, week: Int, insertInto context: NSManagedObjectContext?) {
     self.init(entity: type(of: self).entity(), insertInto: context)
 
@@ -33,41 +16,35 @@ extension PlanDay {
 
   public override func awakeFromFetch() {
     super.awakeFromFetch()
+    updateChaptersRead()
     addObservers()
   }
 
   public override func awakeFromInsert() {
     super.awakeFromInsert()
+    updateChaptersRead()
     addObservers()
   }
 
-  public override func willTurnIntoFault() {
-    super.willTurnIntoFault()
-    removeObservers()
-  }
-
   private func addObservers() {
-    chapters?.forEach { chapter in
-      (chapter as AnyObject).addObserver(self, forKeyPath: #keyPath(PlanChapter.isRead), options: [.initial, .new], context: &PlanDay.context)
-    }
+    NotificationCenter.default.addObserver(
+      self,
+      selector: #selector(objectsDidChange(_:)),
+      name: .NSManagedObjectContextObjectsDidChange,
+      object: managedObjectContext!
+    )
   }
 
-  private func removeObservers() {
-    chapters?.forEach { chapter in
-      (chapter as AnyObject).removeObserver(self, forKeyPath: #keyPath(PlanChapter.isRead), context: &PlanDay.context)
-    }
+  @objc private func objectsDidChange(_ notification: Notification) {
+    guard let refreshed = notification.userInfo![NSRefreshedObjectsKey] as! Set<AnyHashable>?,
+      let chapters = chapters as! Set<AnyHashable>?,
+      !chapters.intersection(refreshed).isEmpty
+      else { return }
+
+    updateChaptersRead()
   }
 
-  public override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-    guard context == &PlanDay.context,
-      let chapter = object,
-      chapters?.contains(chapter) == true,
-      keyPath == #keyPath(PlanChapter.isRead)
-      else {
-        super.observeValue(forKeyPath: keyPath, of: object, change: change, context: context)
-        return
-      }
-
+  private func updateChaptersRead() {
     chaptersRead = value(forKeyPath: "chapters.@sum.isRead") as! Int16
   }
 
