@@ -43,19 +43,30 @@ struct PlanDayDetailViewModel {
     }
   }
 
-  private func markAsRead(at indexPath: IndexPath, completionHandler: @escaping (Error?) -> Void) {
-    let objectID: NSManagedObjectID
-
-    do {
-      let chapter = self[indexPath]
-      guard !chapter.isRead else { completionHandler(nil); return }
-      objectID = self[indexPath].objectID
+  func markAsUnread(at indexPath: IndexPath, completionHandler: @escaping (Error?) -> Void) {
+    updateChapter(at: indexPath, completionHandler: completionHandler) { chapter, save in
+      guard chapter.isRead else { save = false; return }
+      chapter.isRead = false
     }
+  }
+
+  func markAsRead(at indexPath: IndexPath, completionHandler: @escaping (Error?) -> Void) {
+    updateChapter(at: indexPath, completionHandler: completionHandler) { chapter, save in
+      guard !chapter.isRead else { save = false; return }
+      chapter.isRead = true
+    }
+  }
+
+  private func updateChapter(at indexPath: IndexPath, completionHandler: @escaping (Error?) -> Void, modify: @escaping (_ chapter: PlanChapter, _ save: inout Bool) -> Void) {
+    let objectID = self[indexPath].objectID
 
     store.performBackgroundTask(failingWith: completionHandler) { context in
       let chapter = PlanChapter.fetch(by: objectID, in: context)
-      chapter.isRead = true
-      try context.save()
+      var save = true
+      modify(chapter, &save)
+      if save {
+        try context.save()
+      }
     }
   }
 }
