@@ -1,4 +1,4 @@
-github "CardinalNow/iOS-CircleProgressView" "1.1.1"
+github "CardinalNow/iOS-CircleProgressView" "1.1.3"
 github "Quick/Nimble" "v7.0.1"
 github "Quick/Quick" "v1.0.0"
 github "steipete/Aspects" "1.4.2"

@@ -2,4 +2,4 @@
 
 set -e
 
-carthage update --platform iOS "$@"
+carthage update --no-build --platform iOS "$@"
