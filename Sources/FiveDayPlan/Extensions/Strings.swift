@@ -43,15 +43,16 @@ extension String {
     }
   }
 
-  func enumerated(_ options: String.EnumerationOptions) -> AnySequence<String> {
-    return AnySequence { () -> AnyIterator<String> in
+  func enumerated(_ options: String.EnumerationOptions) -> AnySequence<Substring> {
+    let options = options.union(.substringNotRequired)
+    return AnySequence { () -> AnyIterator<Substring> in
       var searchRange = self.startIndex ..< self.endIndex
 
       return AnyIterator {
-        var nextLine: String?
-        self.enumerateSubstrings(in: searchRange, options: options) { line, _, range, stop in
-          nextLine = line
-          searchRange = range.upperBound ..< searchRange.upperBound
+        var nextLine: Substring?
+        self.enumerateSubstrings(in: searchRange, options: options) { _, range, enclosingRange, stop in
+          nextLine = self[range]
+          searchRange = enclosingRange.upperBound ..< searchRange.upperBound
           stop = true
         }
         return nextLine

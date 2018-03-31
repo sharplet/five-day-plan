@@ -24,7 +24,7 @@ extension PlanTemplate {
     var days: [ScriptureCollection]
 
     init(text: String) throws {
-      let lines = text.enumerated(.byLines).makeIterator()
+      var lines = text.enumerated(.byLines).lazy.map(String.init).makeIterator()
 
       guard let title = lines.next() else {
         throw PlanTemplateError.missingTitle(text)
