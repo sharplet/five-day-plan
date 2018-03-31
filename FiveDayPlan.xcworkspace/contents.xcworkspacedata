@@ -5,6 +5,18 @@
       location = "container:FiveDayPlan.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:Carthage/Checkouts/Aspects/Aspects.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:Carthage/Checkouts/iOS-CircleProgressView/CircleProgressView.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Carthage/Checkouts/Nimble/Nimble.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Carthage/Checkouts/Perform/Perform.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Carthage/Checkouts/Quick/Quick.xcodeproj">
    </FileRef>
 </Workspace>

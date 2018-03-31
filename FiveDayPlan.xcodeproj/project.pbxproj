@@ -12,10 +12,6 @@
 		4A0233361E1AC1ED00087E4C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A0233341E1AC1ED00087E4C /* Main.storyboard */; };
 		4A0233391E1AC22000087E4C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0233381E1AC22000087E4C /* AppDelegate.swift */; };
 		4A02333C1E1AC3D200087E4C /* PlanTemplateSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A02333B1E1AC3D200087E4C /* PlanTemplateSpec.swift */; };
-		4A0233401E1AC51400087E4C /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A02333E1E1AC51400087E4C /* Nimble.framework */; };
-		4A0233411E1AC51400087E4C /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A02333F1E1AC51400087E4C /* Quick.framework */; };
-		4A0233431E1AC52D00087E4C /* Nimble.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 4A02333E1E1AC51400087E4C /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		4A0233441E1AC52D00087E4C /* Quick.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 4A02333F1E1AC51400087E4C /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4A0233491E1AC8AC00087E4C /* TestBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0233481E1AC8AC00087E4C /* TestBundle.swift */; };
 		4A02334C1E1AC93100087E4C /* Plans in Resources */ = {isa = PBXBuildFile; fileRef = 4A02334B1E1AC93100087E4C /* Plans */; };
 		4A02334F1E1AC97500087E4C /* PlanTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A02334E1E1AC97500087E4C /* PlanTemplate.swift */; };
@@ -24,6 +20,12 @@
 		4A0233581E1AEAC500087E4C /* Scripture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0233571E1AEAC500087E4C /* Scripture.swift */; };
 		4A02335A1E1AF36600087E4C /* ScriptureCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0233591E1AF36600087E4C /* ScriptureCollection.swift */; };
 		4A0233601E1B09F600087E4C /* CollectionExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A02335F1E1B09F600087E4C /* CollectionExtensions.swift */; };
+		4A0F22C2206FF7E7004D5A61 /* Aspects.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4A0F22BE206FF7AC004D5A61 /* Aspects.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4A0F22C3206FF7EA004D5A61 /* Perform.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4A0F22BF206FF7AC004D5A61 /* Perform.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4A0F22C5206FF80F004D5A61 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A0F22C4206FF80F004D5A61 /* Nimble.framework */; };
+		4A0F22C7206FF813004D5A61 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A0F22C6206FF813004D5A61 /* Quick.framework */; };
+		4A0F22C8206FF81D004D5A61 /* Nimble.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4A0F22C4206FF80F004D5A61 /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4A0F22C9206FF81D004D5A61 /* Quick.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4A0F22C6206FF813004D5A61 /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4A1081721E4182C5008A9706 /* FiveDayPlan.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4A1081701E4182C5008A9706 /* FiveDayPlan.xcdatamodeld */; };
 		4A10817A1E423CE5008A9706 /* PersistentContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1081791E423CE5008A9706 /* PersistentContainer.swift */; };
 		4A10817C1E423DDA008A9706 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A10817B1E423DDA008A9706 /* Store.swift */; };
@@ -39,8 +41,6 @@
 		4ABFD2E01E4B72E800B420FC /* NSManagedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ABFD2DF1E4B72E800B420FC /* NSManagedObject.swift */; };
 		4AEBFC371E3EC23F0097540F /* PlanOutlineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AEBFC361E3EC23F0097540F /* PlanOutlineViewController.swift */; };
 		4AEBFC3A1E3EC4E90097540F /* PlanOutlineViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AEBFC391E3EC4E90097540F /* PlanOutlineViewModel.swift */; };
-		4AEBFC3D1E3EEF2E0097540F /* Aspects.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AEBFC3B1E3EEF2E0097540F /* Aspects.framework */; };
-		4AEBFC3E1E3EEF2E0097540F /* Perform.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AEBFC3C1E3EEF2E0097540F /* Perform.framework */; };
 		4AEBFC421E3EEF940097540F /* Segues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AEBFC411E3EEF940097540F /* Segues.swift */; };
 		4AEBFC441E3EEFD70097540F /* PlanDayDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AEBFC431E3EEFD70097540F /* PlanDayDetailViewController.swift */; };
 		4AEBFC461E3EF0550097540F /* PlanDayDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AEBFC451E3EF0550097540F /* PlanDayDetailViewModel.swift */; };
@@ -59,16 +59,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		4A0233421E1AC51E00087E4C /* Copy Frameworks */ = {
+		4A0233421E1AC51E00087E4C /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				4A0233431E1AC52D00087E4C /* Nimble.framework in Copy Frameworks */,
-				4A0233441E1AC52D00087E4C /* Quick.framework in Copy Frameworks */,
+				4A0F22C8206FF81D004D5A61 /* Nimble.framework in Embed Frameworks */,
+				4A0F22C9206FF81D004D5A61 /* Quick.framework in Embed Frameworks */,
 			);
-			name = "Copy Frameworks";
+			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		4A12C7071E4BC1100041FFD6 /* Embed Frameworks */ = {
@@ -77,7 +77,9 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				4A0F22C2206FF7E7004D5A61 /* Aspects.framework in Embed Frameworks */,
 				4A12C7061E4BC1100041FFD6 /* CircleProgressView.framework in Embed Frameworks */,
+				4A0F22C3206FF7EA004D5A61 /* Perform.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -90,8 +92,6 @@
 		4A0233341E1AC1ED00087E4C /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		4A0233381E1AC22000087E4C /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4A02333B1E1AC3D200087E4C /* PlanTemplateSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanTemplateSpec.swift; sourceTree = "<group>"; };
-		4A02333E1E1AC51400087E4C /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
-		4A02333F1E1AC51400087E4C /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
 		4A0233481E1AC8AC00087E4C /* TestBundle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestBundle.swift; sourceTree = "<group>"; };
 		4A02334B1E1AC93100087E4C /* Plans */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Plans; sourceTree = "<group>"; };
 		4A02334E1E1AC97500087E4C /* PlanTemplate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanTemplate.swift; sourceTree = "<group>"; };
@@ -100,6 +100,10 @@
 		4A0233571E1AEAC500087E4C /* Scripture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scripture.swift; sourceTree = "<group>"; };
 		4A0233591E1AF36600087E4C /* ScriptureCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScriptureCollection.swift; sourceTree = "<group>"; };
 		4A02335F1E1B09F600087E4C /* CollectionExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionExtensions.swift; sourceTree = "<group>"; };
+		4A0F22BE206FF7AC004D5A61 /* Aspects.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Aspects.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A0F22BF206FF7AC004D5A61 /* Perform.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Perform.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A0F22C4206FF80F004D5A61 /* Nimble.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Nimble.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A0F22C6206FF813004D5A61 /* Quick.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Quick.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A1081711E4182C5008A9706 /* FiveDayPlan.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FiveDayPlan.xcdatamodel; sourceTree = "<group>"; };
 		4A1081791E423CE5008A9706 /* PersistentContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistentContainer.swift; sourceTree = "<group>"; };
 		4A10817B1E423DDA008A9706 /* Store.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
@@ -118,8 +122,6 @@
 		4ABFD2DF1E4B72E800B420FC /* NSManagedObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSManagedObject.swift; sourceTree = "<group>"; };
 		4AEBFC361E3EC23F0097540F /* PlanOutlineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanOutlineViewController.swift; sourceTree = "<group>"; };
 		4AEBFC391E3EC4E90097540F /* PlanOutlineViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanOutlineViewModel.swift; sourceTree = "<group>"; };
-		4AEBFC3B1E3EEF2E0097540F /* Aspects.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Aspects.framework; path = Carthage/Build/iOS/Aspects.framework; sourceTree = "<group>"; };
-		4AEBFC3C1E3EEF2E0097540F /* Perform.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Perform.framework; path = Carthage/Build/iOS/Perform.framework; sourceTree = "<group>"; };
 		4AEBFC411E3EEF940097540F /* Segues.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Segues.swift; sourceTree = "<group>"; };
 		4AEBFC431E3EEFD70097540F /* PlanDayDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanDayDetailViewController.swift; sourceTree = "<group>"; };
 		4AEBFC451E3EF0550097540F /* PlanDayDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanDayDetailViewModel.swift; sourceTree = "<group>"; };
@@ -133,8 +135,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4A12C7051E4BC1100041FFD6 /* CircleProgressView.framework in Frameworks */,
-				4AEBFC3D1E3EEF2E0097540F /* Aspects.framework in Frameworks */,
-				4AEBFC3E1E3EEF2E0097540F /* Perform.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -142,8 +142,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4A0233401E1AC51400087E4C /* Nimble.framework in Frameworks */,
-				4A0233411E1AC51400087E4C /* Quick.framework in Frameworks */,
+				4A0F22C7206FF813004D5A61 /* Quick.framework in Frameworks */,
+				4A0F22C5206FF80F004D5A61 /* Nimble.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -182,11 +182,11 @@
 		4A02333D1E1AC4F500087E4C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				4AEBFC3B1E3EEF2E0097540F /* Aspects.framework */,
+				4A0F22BE206FF7AC004D5A61 /* Aspects.framework */,
 				4A12C7041E4BC1100041FFD6 /* CircleProgressView.framework */,
-				4A02333E1E1AC51400087E4C /* Nimble.framework */,
-				4AEBFC3C1E3EEF2E0097540F /* Perform.framework */,
-				4A02333F1E1AC51400087E4C /* Quick.framework */,
+				4A0F22C4206FF80F004D5A61 /* Nimble.framework */,
+				4A0F22BF206FF7AC004D5A61 /* Perform.framework */,
+				4A0F22C6206FF813004D5A61 /* Quick.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -342,7 +342,6 @@
 				4A49B89B1E1AB4160042A82A /* Sources */,
 				4A49B89C1E1AB4160042A82A /* Frameworks */,
 				4A49B89D1E1AB4160042A82A /* Resources */,
-				4AEBFC401E3EEF4E0097540F /* Copy Carthage Frameworks */,
 				4A12C7071E4BC1100041FFD6 /* Embed Frameworks */,
 			);
 			buildRules = (
@@ -361,7 +360,7 @@
 				4A49B8AF1E1AB4160042A82A /* Sources */,
 				4A49B8B01E1AB4160042A82A /* Frameworks */,
 				4A49B8B11E1AB4160042A82A /* Resources */,
-				4A0233421E1AC51E00087E4C /* Copy Frameworks */,
+				4A0233421E1AC51E00087E4C /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -438,27 +437,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		4AEBFC401E3EEF4E0097540F /* Copy Carthage Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/Aspects.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Perform.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/CircleProgressView.framework",
-			);
-			name = "Copy Carthage Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/bin/env carthage copy-frameworks";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4A49B89B1E1AB4160042A82A /* Sources */ = {
@@ -538,8 +516,6 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				"FRAMEWORK_SEARCH_PATHS[sdk=iphoneos*]" = "$(PROJECT_DIR)/Carthage/Build/iOS";
-				"FRAMEWORK_SEARCH_PATHS[sdk=iphonesimulator*]" = "$(PROJECT_DIR)/Carthage/Build/iOS";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -589,8 +565,6 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				"FRAMEWORK_SEARCH_PATHS[sdk=iphoneos*]" = "$(PROJECT_DIR)/Carthage/Build/iOS";
-				"FRAMEWORK_SEARCH_PATHS[sdk=iphonesimulator*]" = "$(PROJECT_DIR)/Carthage/Build/iOS";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -612,10 +586,6 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 9895358S97;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
 				INFOPLIST_FILE = Sources/FiveDayPlan/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.sharplet.FiveDayPlan;
@@ -629,10 +599,6 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 9895358S97;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
 				INFOPLIST_FILE = Sources/FiveDayPlan/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.sharplet.FiveDayPlan;
