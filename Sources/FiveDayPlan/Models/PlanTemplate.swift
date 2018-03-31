@@ -14,7 +14,7 @@ struct PlanTemplate {
       else { throw PlanTemplateError.noSuchTemplate(name: name) }
 
     let string = try String(contentsOf: url)
-    weeks = try string.blocks.map { try Week(text: $0) }
+    weeks = try string.blocks.map { try Week(text: String($0)) }
   }
 }
 
@@ -49,8 +49,8 @@ private func makeScriptureCollection(_ line: String) throws -> ScriptureCollecti
     let scripture: String
 
     if let separator = line.range(of: ";\\s*", options: .regularExpression) {
-      scripture = line.substring(to: separator.lowerBound)
-      line.removeSubrange(line.startIndex..<separator.upperBound)
+      scripture = String(line[..<separator.lowerBound])
+      line.removeSubrange(..<separator.upperBound)
     } else {
       scripture = line
       line.removeAll()

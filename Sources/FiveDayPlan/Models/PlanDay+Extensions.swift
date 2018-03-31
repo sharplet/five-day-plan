@@ -66,7 +66,7 @@ extension PlanDay {
     return 0 < percentage && percentage < 1
   }
 
-  var name: String {
+  @objc var name: String {
     return String(
       format: NSLocalizedString("Day %d", comment: "Day description format"),
       order
@@ -77,7 +77,7 @@ extension PlanDay {
     return Double(chaptersRead) / Double(chapterCount)
   }
 
-  var weekName: String {
+  @objc var weekName: String {
     return String(
       format: NSLocalizedString("Week %d", comment: "Week description format"),
       week

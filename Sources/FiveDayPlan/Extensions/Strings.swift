@@ -1,13 +1,13 @@
 import Foundation
 
 extension String {
-  var blocks: AnySequence<String> {
+  var blocks: AnySequence<Substring> {
     enum ScanMode {
       case accumulate(from: String.Index)
       case skip
     }
 
-    return AnySequence { () -> AnyIterator<String> in
+    return AnySequence { () -> AnyIterator<Substring> in
       var mode = ScanMode.skip
       var searchRange = self.startIndex..<self.endIndex
 
@@ -38,7 +38,7 @@ extension String {
           }
         }
 
-        return blockRange.map(self.substring(with:))
+        return blockRange.map { self[$0] }
       }
     }
   }
