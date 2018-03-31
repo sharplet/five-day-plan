@@ -32,10 +32,7 @@ struct PlanDayDetailViewModel {
   func openChapter(at indexPath: IndexPath, completionHandler: @escaping (Error?) -> Void) {
     let chapter = Scripture.Chapter(self[indexPath])
     provider.open(chapter) { success in
-#if (arch(i386) || arch(x86_64)) && os(iOS)
-      let success = true
-#endif
-      if success {
+      if success || TargetEnvironment.isSimulator {
         self.markAsRead(at: indexPath, completionHandler: completionHandler)
       } else {
         completionHandler(nil)

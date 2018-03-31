@@ -26,6 +26,7 @@
 		4A0F22C7206FF813004D5A61 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A0F22C6206FF813004D5A61 /* Quick.framework */; };
 		4A0F22C8206FF81D004D5A61 /* Nimble.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4A0F22C4206FF80F004D5A61 /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4A0F22C9206FF81D004D5A61 /* Quick.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4A0F22C6206FF813004D5A61 /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4A0F22CB206FF9CE004D5A61 /* TargetEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0F22CA206FF9CE004D5A61 /* TargetEnvironment.swift */; };
 		4A1081721E4182C5008A9706 /* FiveDayPlan.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4A1081701E4182C5008A9706 /* FiveDayPlan.xcdatamodeld */; };
 		4A10817A1E423CE5008A9706 /* PersistentContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1081791E423CE5008A9706 /* PersistentContainer.swift */; };
 		4A10817C1E423DDA008A9706 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A10817B1E423DDA008A9706 /* Store.swift */; };
@@ -104,6 +105,7 @@
 		4A0F22BF206FF7AC004D5A61 /* Perform.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Perform.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A0F22C4206FF80F004D5A61 /* Nimble.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Nimble.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A0F22C6206FF813004D5A61 /* Quick.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Quick.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A0F22CA206FF9CE004D5A61 /* TargetEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetEnvironment.swift; sourceTree = "<group>"; };
 		4A1081711E4182C5008A9706 /* FiveDayPlan.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FiveDayPlan.xcdatamodel; sourceTree = "<group>"; };
 		4A1081791E423CE5008A9706 /* PersistentContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistentContainer.swift; sourceTree = "<group>"; };
 		4A10817B1E423DDA008A9706 /* Store.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
@@ -228,6 +230,7 @@
 				4ABFD2DF1E4B72E800B420FC /* NSManagedObject.swift */,
 				4A0233551E1AE4A100087E4C /* Sequence.swift */,
 				4A0233531E1AE34400087E4C /* Strings.swift */,
+				4A0F22CA206FF9CE004D5A61 /* TargetEnvironment.swift */,
 				4A912CD81E4AA068001B9875 /* UIAlertController.swift */,
 				4A912CDA1E4AA127001B9875 /* UIViewController.swift */,
 			);
@@ -457,6 +460,7 @@
 				4AEBFC481E3EF6550097540F /* YouVersionScriptureProvider.swift in Sources */,
 				4AEBFC3A1E3EC4E90097540F /* PlanOutlineViewModel.swift in Sources */,
 				4AEBFC461E3EF0550097540F /* PlanDayDetailViewModel.swift in Sources */,
+				4A0F22CB206FF9CE004D5A61 /* TargetEnvironment.swift in Sources */,
 				4A0233561E1AE4A100087E4C /* Sequence.swift in Sources */,
 				4AEBFC371E3EC23F0097540F /* PlanOutlineViewController.swift in Sources */,
 				4A10817A1E423CE5008A9706 /* PersistentContainer.swift in Sources */,
