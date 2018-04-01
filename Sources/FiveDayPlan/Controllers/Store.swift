@@ -32,11 +32,8 @@ final class Store {
   }
 
   func planOutlineController() -> NSFetchedResultsController<PlanDay> {
-    let request: NSFetchRequest<PlanDay> = PlanDay.fetchRequest()
-    request.sortDescriptors = [.byPlanWeek, .byPlanDay]
-
     return NSFetchedResultsController(
-      fetchRequest: request,
+      fetchRequest: PlanDay.fetchOutline(),
       managedObjectContext: container.unsafeViewContext,
       sectionNameKeyPath: #keyPath(PlanDay.weekName),
       cacheName: nil

@@ -85,6 +85,14 @@ extension PlanDay {
   }
 }
 
+extension PlanDay {
+  static func fetchOutline() -> NSFetchRequest<PlanDay> {
+    let request: NSFetchRequest<PlanDay> = PlanDay.fetchRequest()
+    request.sortDescriptors = [.byPlanWeek, .byPlanDay]
+    return request
+  }
+}
+
 extension NSSortDescriptor {
   static var byPlanWeek: NSSortDescriptor {
     return NSSortDescriptor(key: #keyPath(PlanDay.week), ascending: true)
