@@ -2,6 +2,8 @@ import CircleProgressView
 import CoreData
 import UIKit
 
+private let sectionHeaderLabelAdjustment = 18 as CGFloat
+
 final class PlanOutlineViewController: UITableViewController {
   let viewModel = PlanOutlineViewModel(plan: .year2017, store: .shared)
 
@@ -27,6 +29,7 @@ final class PlanOutlineViewController: UITableViewController {
 
     if isFirstLoad, let indexPath = viewModel.indexPathForCurrentWeek() {
       tableView.scrollToRow(at: indexPath, at: .top, animated: false)
+      tableView.contentOffset.y -= sectionHeaderLabelAdjustment
     }
   }
 
