@@ -5,6 +5,8 @@ import UIKit
 final class PlanOutlineViewController: UITableViewController {
   let viewModel = PlanOutlineViewModel(plan: .year2017, store: .shared)
 
+  private var isFirstLoad = true
+
   override func viewDidLoad() {
     super.viewDidLoad()
 
@@ -16,6 +18,16 @@ final class PlanOutlineViewController: UITableViewController {
 
     initialise()
     performFetch()
+  }
+
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+
+    defer { isFirstLoad = false }
+
+    if isFirstLoad, let indexPath = viewModel.indexPathForNextUnread() {
+      tableView.scrollToRow(at: indexPath, at: .top, animated: false)
+    }
   }
 
   private func initialise() {

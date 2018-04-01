@@ -17,6 +17,19 @@ final class PlanOutlineViewModel {
     try fetchController.performFetch()
   }
 
+  func indexPathForNextUnread() -> IndexPath? {
+    let request = PlanDay.fetchOutline()
+    request.fetchLimit = 1
+    request.includesPropertyValues = false
+    request.predicate = NSPredicate(format: "ANY chapters.@sum.isRead < chapters.@count")
+
+    guard let result = (try? fetchController.managedObjectContext.fetch(request))?.first,
+      let indexPath = fetchController.indexPath(forObject: result)
+      else { return nil }
+
+    return indexPath
+  }
+
   func initialise(completion: @escaping (Error?) -> Void) {
     dispatchPrecondition(condition: .onQueue(.main))
 
