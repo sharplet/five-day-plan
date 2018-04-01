@@ -25,7 +25,7 @@ final class PlanOutlineViewController: UITableViewController {
 
     defer { isFirstLoad = false }
 
-    if isFirstLoad, let indexPath = viewModel.indexPathForNextUnread() {
+    if isFirstLoad, let indexPath = viewModel.indexPathForCurrentWeek() {
       tableView.scrollToRow(at: indexPath, at: .top, animated: false)
     }
   }
